@@ -1,5 +1,12 @@
 const axios = require("axios");
+module.exports = axios();
 
-export default retrievePosts = () => (
-    axios.get('http://localhost:3000/posts')
-); 
+module.exports = retrievePosts = (url) => {
+    try {
+        console.log(axios.get(url));
+        return axios.get(url);       
+    } catch (error) {
+        console.log("error");
+        new throwError(error);
+    }
+}; 
